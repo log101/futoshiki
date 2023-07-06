@@ -1,0 +1,35 @@
+.contaier {
+    display: inline-flex;
+    padding: 138px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #FFF;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.arrow-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.cell {
+    border: 1px solid black;
+    width: 120px;
+    height: 120px;
+}
+
+.vertical-arrow {
+    width: 48px;
+    height: 120px;
+}
+
+.horizontal-arrow {
+    width: 120px;
+    height: 48px;
+}
