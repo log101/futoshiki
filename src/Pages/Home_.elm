@@ -3,6 +3,8 @@ module Pages.Home_ exposing (view)
 import Html exposing (Html, div)
 import Html.Attributes exposing (class)
 import View exposing (View)
+import Html exposing (img)
+import Html.Attributes exposing (src)
 
 
 view : View msg
@@ -10,17 +12,19 @@ view =
     { title = "Futoshiki"
     , body =
         [ div [ class "container" ]
-            [ row
-                [ cell, verticalArrow, cell, verticalArrow, cell, verticalArrow, cell ]
-            , arrowRow [ horizontalArrow, horizontalArrow, horizontalArrow, horizontalArrow ]
-            , row
-                [ cell, verticalArrow, cell, verticalArrow, cell, verticalArrow, cell ]
-            , arrowRow [ horizontalArrow, horizontalArrow, horizontalArrow, horizontalArrow ]
-            , row
-                [ cell, verticalArrow, cell, verticalArrow, cell, verticalArrow, cell ]
-            , arrowRow [ horizontalArrow, horizontalArrow, horizontalArrow, horizontalArrow ]
-            , row
-                [ cell, verticalArrow, cell, verticalArrow, cell, verticalArrow, cell ]
+            [ div [ class "board" ]
+                [ row
+                    [ cell, chevronLeft, cell, verticalArrow, cell, verticalArrow, cell ]
+                , arrowRow [ horizontalArrow, horizontalArrow, horizontalArrow, horizontalArrow ]
+                , row
+                    [ cell, verticalArrow, cell, verticalArrow, cell, verticalArrow, cell ]
+                , arrowRow [ chevronUp, horizontalArrow, horizontalArrow, horizontalArrow ]
+                , row
+                    [ cell, verticalArrow, cell, verticalArrow, cell, chevronRight, cell ]
+                , arrowRow [ horizontalArrow, chevronBottom, horizontalArrow, horizontalArrow ]
+                , row
+                    [ cell, chevronLeft, cell, verticalArrow, cell, verticalArrow, cell ]
+                ]
             ]
         ]
     }
@@ -49,3 +53,17 @@ verticalArrow =
 horizontalArrow : Html msg
 horizontalArrow =
     div [ class "horizontal-arrow" ] []
+
+
+chevronLeft : Html msg
+chevronLeft = img [ src "/images/chevron-left.png" ] []
+
+chevronRight : Html msg
+chevronRight = img [ src "/images/chevron-right.png" ] []
+
+
+chevronUp : Html msg
+chevronUp = img [ src "/images/chevron-top.png" ] []
+
+chevronBottom : Html msg
+chevronBottom = img [ src "/images/chevron-bottom.png" ] []
