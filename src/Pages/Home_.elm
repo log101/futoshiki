@@ -1,10 +1,9 @@
 module Pages.Home_ exposing (view)
 
-import Html exposing (Html, div)
-import Html.Attributes exposing (class)
+import Html exposing (Html, div, img, p)
+import Html.Attributes exposing (class, src)
 import View exposing (View)
-import Html exposing (img)
-import Html.Attributes exposing (src)
+
 
 view : View msg
 view =
@@ -41,7 +40,7 @@ arrowRow =
 
 cell : Html msg
 cell =
-    div [ class "cell" ] []
+    div [ class "cell" ] [ p [ class "cell-number" ] [ Html.text (String.fromInt 0) ] ]
 
 
 verticalArrow : Html msg
@@ -55,14 +54,20 @@ horizontalArrow =
 
 
 chevronLeft : Html msg
-chevronLeft = img [ src "/images/chevron-left.png" ] []
+chevronLeft =
+    img [ src "/images/chevron-left.png" ] []
+
 
 chevronRight : Html msg
-chevronRight = img [ src "/images/chevron-right.png" ] []
+chevronRight =
+    img [ src "/images/chevron-right.png" ] []
 
 
 chevronUp : Html msg
-chevronUp = img [ src "/images/chevron-top.png" ] []
+chevronUp =
+    img [ src "/images/chevron-top.png" ] []
+
 
 chevronBottom : Html msg
-chevronBottom = img [ src "/images/chevron-bottom.png" ] []
+chevronBottom =
+    img [ src "/images/chevron-bottom.png" ] []
