@@ -6,7 +6,6 @@ import View exposing (View)
 import Html exposing (img)
 import Html.Attributes exposing (src)
 
-
 view : View msg
 view =
     { title = "Futoshiki"
